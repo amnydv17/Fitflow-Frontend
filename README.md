@@ -64,5 +64,5 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    git clone https://github.com/yourusername/fitness-tracker.git
 2.Change directory to the project folder:
-    ```bash
+   
     cd fitness-tracker
