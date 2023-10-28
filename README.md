@@ -57,12 +57,3 @@ Before you begin, ensure you have met the following requirements:
 - MongoDB installed and running.
 - An internet browser for viewing the frontend.
 
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/fitness-tracker.git
-2.Change directory to the project folder:
-   
-    cd fitness-tracker
