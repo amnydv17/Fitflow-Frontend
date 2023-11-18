@@ -33,7 +33,7 @@ const AuthPopup: React.FC<AuthPopupProps> = ({ setShowpopup }) => {
                         <Image src={logo} alt="logo" />
                     </div>
                     <div className="right">
-                        <h1>Signup to Become a Fit.</h1>
+                        <h1>Signup to Become a Freak.</h1>
                         <form action="">
                             <Input
                                 color="warning"
@@ -90,7 +90,7 @@ const AuthPopup: React.FC<AuthPopupProps> = ({ setShowpopup }) => {
                         <Image src={logo} alt="logo" />
                     </div>
                     <div className="right">
-                        <h1>Login to Become a Fit.</h1>
+                        <h1>Login to Become a Freak.</h1>
                         <form action="">
                             <Input
                                 color="warning"

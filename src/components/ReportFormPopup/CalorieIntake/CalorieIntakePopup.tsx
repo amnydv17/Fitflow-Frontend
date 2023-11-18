@@ -1,8 +1,9 @@
-import React from 'react'
 import '../popup.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-// import DatePicker from "react-horizontal-datepicker";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { AiFillDelete, AiOutlineClose } from 'react-icons/ai'
 import { TimeClock } from '@mui/x-date-pickers/TimeClock';
 import dayjs, { Dayjs } from 'dayjs';
@@ -16,7 +17,7 @@ interface CaloriIntakePopupProps {
 const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIntakePopup }) => {
   const color = '#ffc20e'
 
-  const [date, setDate] = React.useState<any>(new Date())
+  const [startDate, setStartDate] = useState(new Date());
 
   const selectedDay = (val: any) => {
     console.log(val)
@@ -35,15 +36,12 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
               <AiOutlineClose />
           </button>
 
-          {/* <DatePicker getSelectedDay={selectedDay}
-            endDate={100}
-            selectDate={new Date()}
-            labelFormat={"MMMM"}
-            color={color}
-          /> */}
 
         <TextField id="outlined-basic" label="Food item name" variant="outlined" color="warning" />
         <TextField id="outlined-basic" label="Food item amount (in gms)" variant="outlined" color="warning" />
+
+        <DatePicker selected={startDate} onChange={(date: Date | null) => date && setStartDate(date)} />
+
         <div className='timebox'>
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <TimeClock value={value} onChange={(newValue) => setValue(newValue)}
@@ -51,6 +49,7 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
           </LocalizationProvider>
 
         </div>
+        
         <Button variant="contained" color="warning">
           Save
         </Button>
