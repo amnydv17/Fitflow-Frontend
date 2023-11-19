@@ -17,7 +17,7 @@ interface CaloriIntakePopupProps {
 const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIntakePopup }) => {
   const color = '#ffc20e'
 
-  const [startDate, setStartDate] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   const selectedDay = (val: any) => {
     console.log(val)
@@ -40,7 +40,7 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
         <TextField id="outlined-basic" label="Food item name" variant="outlined" color="warning" />
         <TextField id="outlined-basic" label="Food item amount (in gms)" variant="outlined" color="warning" />
 
-        <DatePicker selected={startDate} onChange={(date: Date | null) => date && setStartDate(date)} />
+        <DatePicker selected={date} onChange={(date: Date | null) => date && setDate(date)} />
 
         <div className='timebox'>
           <LocalizationProvider dateAdapter={AdapterDayjs}>

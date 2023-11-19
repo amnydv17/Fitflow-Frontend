@@ -27,12 +27,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .authform .left img{
     width: 80%;
-    height: 100%;
-    object-fit:contain;
+    height: 60%;
+    object-fit: contain;
 }
 
 .authform .right{
@@ -46,8 +48,8 @@
 
 .authform .right h1{
     color: var(--coll);
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 300;
     text-align: center;
     margin: 10px 0px;
 }
@@ -67,9 +69,9 @@
     gap: 10px;
 }
 
-/* .authform .right form input{
-    background-color: aqua;
-} */
+.authform .right form input{
+    /* background-color: aqua; */
+}
 
 .popup .close{
     position: absolute;
