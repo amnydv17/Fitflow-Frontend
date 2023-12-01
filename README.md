@@ -1,5 +1,5 @@
 # Fitness Tracker Application
-
+<h1>Author- Aman Yadav</h1>
 A full-stack fitness tracker web application built using the MERN stack with TypeScript.
 
 ## Table of Contents
