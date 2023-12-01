@@ -4,9 +4,14 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import './ReportPage.css'
 import { AiFillEdit } from 'react-icons/ai'
 import CaloriIntakePopup from '@/components/ReportFormPopup/CalorieIntake/CalorieIntakePopup';
+import { usePathname } from 'next/navigation';
+import path from 'path';
 
 const page = () => {
     const color = '#ffc20e'
+    const pathname = usePathname()
+    console.log(pathname);
+    
 
     const chartsParams = {
         // margin: { bottom: 20, left: 25, right: 5 },
@@ -125,84 +130,14 @@ const [dataS1, setDataS1] = React.useState<any>(null)
                     />
                 }
             </div>
-            <div className='s2'>
-                {
-                    dataS1 &&
-                    <LineChart
-                        xAxis={[{
-                            id: 'Day',
-                            data: dataS1.xAxis.data,
-                            scaleType: dataS1.xAxis.scaleType,
-                            label: dataS1.xAxis.label,
-                            valueFormatter: (date: any) => {
-                                return date.toLocaleDateString();
-                            }
-                        }]}
-                        series={[
-                            {
-                                data: dataS1.data,
-                                label: dataS1.title,
-                                color: dataS1.color,
-                            },
-                        ]}
-                        {...chartsParams}
-                    />
-                }
-            </div>
-
-            <div className='s3'>
-                {
-                    dataS1 &&
-                    <LineChart
-                        xAxis={[{
-                            id: 'Day',
-                            data: dataS1.xAxis.data,
-                            scaleType: dataS1.xAxis.scaleType,
-                            label: dataS1.xAxis.label,
-                            valueFormatter: (date: any) => {
-                                return date.toLocaleDateString();
-                            }
-                        }]}
-                        series={[
-                            {
-                                data: dataS1.data,
-                                label: dataS1.title,
-                                color: dataS1.color,
-                            },
-                        ]}
-                        {...chartsParams}
-                    />
-                }
-            </div>
-
-            <div className='s4'>
-                {
-                    dataS1 &&
-                    <LineChart
-                        xAxis={[{
-                            id: 'Day',
-                            data: dataS1.xAxis.data,
-                            scaleType: dataS1.xAxis.scaleType,
-                            label: dataS1.xAxis.label,
-                            valueFormatter: (date: any) => {
-                                return date.toLocaleDateString();
-                            }
-                        }]}
-                        series={[
-                            {
-                                data: dataS1.data,
-                                label: dataS1.title,
-                                color: dataS1.color,
-                            },
-                        ]}
-                        {...chartsParams}
-                    />
-                }
-            </div>
             
             <button className='editbutton'
                 onClick={() => {
+                    if(pathname == '/report/Calorie%20Intake'){
                     setShowCalorieIntakePopup(true)
+                    }else{
+                        console.log("Show popup for other reports");
+                    }
                 }}
             >
                 <AiFillEdit />
